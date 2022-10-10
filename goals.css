@@ -1,0 +1,79 @@
+body{
+    background-color: black;
+    color: aliceblue;
+    font-size: 20px;
+}
+h1{
+    text-align:center;
+    font-size: 40px;
+    font-family: 'Times New Roman';
+    font-weight:200;
+    margin:40px;
+}
+.whiteText{
+    color: aliceblue;
+}
+.yellowText{
+    color: rgb(239, 184, 4);
+}
+.word{
+    text-align: center;
+    font-size: 25px;
+    margin: 30px;
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+ }
+
+*{
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33%;
+  padding: 10px;
+}
+
+.row {margin: 0 -5px;}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  height: 485px;
+  text-align: center;
+  color: #000;
+  background-color: #bed5e9;
+}
+img{
+    width: 80%;
+    height: 60%;
+}

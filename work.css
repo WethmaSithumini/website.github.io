@@ -1,0 +1,60 @@
+body{
+    background-color: black;
+    color: aliceblue;
+    font-size: 20px;
+}
+h1{
+    text-align:center;
+    font-size: 40px;
+    font-family: 'Times New Roman';
+    font-weight:200;
+    margin:40px;
+}
+.whiteText{
+    color: aliceblue;
+}
+.yellowText{
+    color: rgb(239, 184, 4);
+}
+.word{
+    text-align: center;
+    font-size: 25px;
+    margin: 30px;
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+} 
+*{
+    box-sizing: border-box;
+  }
+  .column {
+    float: left;
+    width: 33.33%;
+    padding: 30px;
+    height: 470px;
+    margin-top: 35px;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+h2{
+    margin-top: -20px;
+    color: black;
+}
+img{
+    height: 190px;
+    width: 215px;
+}
