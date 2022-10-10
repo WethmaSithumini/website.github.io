@@ -25,15 +25,50 @@
                 </ul>
             </td>
             <td><h2>If you have any suggestion, project or even you want to say Hello..<br> Please fill out the form below and I will reply you shortly.</h2>
-                <form>
+
+                <script type="module">
+                    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-app.js";
+                    import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-database.js";
+
+                    const firebaseConfig = {
+                      apiKey: "AIzaSyDRoE2BJVFPgt1LdEzQ6-bJg-u_IcnL2z8",
+                      authDomain: "myweb-36d47.firebaseapp.com",
+                      databaseURL: "https://myweb-36d47-default-rtdb.asia-southeast1.firebasedatabase.app",
+                      projectId: "myweb-36d47",
+                      storageBucket: "myweb-36d47.appspot.com",
+                      messagingSenderId: "271189230208",
+                      appId: "1:271189230208:web:83b5d9a03f8af2a1bcdc65"
+                    };
+                  
+                    const app = initializeApp(firebaseConfig);
+                    const db = getDatabase(app);
+                    document.getElementById("userform").addEventListener("submit", function(e) {
+                        e.preventDefault();
+                        let userId = document.getElementById("id").value;
+                        let name = document.getElementById("name").value;
+                        let email = document.getElementById("email").value;
+                        let message = document.getElementById("message").value;
+                        set(ref(db, 'users/' + userId), {
+                            username: name,
+                            email: email,
+                        });
+                    });
+                  </script> 
+                  
+                  <form method="post" id="userform">
                     <div class="form">
                         <div class="input-container ic1">
-                          <input id="name" class="input" type="text" placeholder=" " />
+                            <input id="id" class="input" type="text" placeholder=" " />
+                            <div class="cut"></div>
+                            <label for="id" class="placeholder">YOUR ID</label>
+                          </div>
+                        <div class="input-container ic1">
+                          <input id="name" class="input" type="text" required placeholder=" " />
                           <div class="cut"></div>
                           <label for="name" class="placeholder">YOUR NAME</label>
                         </div>
                         <div class="input-container ic2">
-                          <input id="email" class="input" type="text" placeholder=" " />
+                          <input id="email" class="input" type="email" placeholder=" " />
                           <div class="cut"></div>
                           <label for="email" class="placeholder">YOUR EMAIL</label>
                         </div>
@@ -44,7 +79,7 @@
                         </div>
                         <button type="text" class="submit">SEND MESSAGE</button>
                       </div>
-                </form>
+                  </form>
             </td>
         </tr>
         </table>
